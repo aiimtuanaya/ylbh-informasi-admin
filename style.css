@@ -1,0 +1,409 @@
+/* Typography & General */
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* Navbar */
+
+.navbar {
+  background-color: #800000 !important;
+}
+.navbar .nav-link {
+  transition: color 0.3s ease;
+}
+.navbar .nav-link.active {
+  color: #e0e0e0 !important;
+  font-weight: bold;
+}
+.navbar-brand i {
+  transition: transform 0.3s ease;
+}
+.navbar-brand:hover i {
+  transform: rotate(-5deg) scale(1.5);
+}
+
+/* Section Scroll Offset */
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Header */
+
+header {
+  background: linear-gradient(rgba(68, 65, 65, 0.199), rgba(128, 0, 0, 0.6)),
+    url("aset/logoylbh.png") center/contain no-repeat;
+  background-color: #1a1a1a;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  padding: 6rem 1rem;
+}
+header h1 {
+  animation: fadeDown 1s ease-in-out;
+}
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tombol Animasi */
+
+.btn-animated {
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
+.btn-animated:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: #f54d0a !important;
+  border-color: #800000 !important;
+}
+
+/* Scroll Fade */
+
+/*.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.scroll-fade.show {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+/* Kartu */
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  border: none;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.card .btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.card:hover .btn {
+  opacity: 1;
+}
+.card img {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0;
+}
+
+/* </--nonaktif sementara /> 
+
+.rotate-icon {
+  transition: transform 0.3s ease;
+}
+button[aria-expanded="true"] .rotate-icon {
+  transform: rotate(180deg);
+} */
+
+.collapse {
+  transition: height 0.4s ease !important;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.btn-primary {
+  background-color: #800000;
+  border-color: #800000;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.btn-primary:hover {
+  background-color: #a52a2a;
+  border-color: #a52a2a;
+}
+.btn-warning {
+  border-radius: 6px;
+  font-weight: 500;
+}
+.btn-danger {
+  border-radius: 6px;
+  font-weight: 500;
+}
+.btn-outline-primary {
+  color: #800000;
+  border-color: #800000;
+}
+.btn-outline-primary:hover {
+  background-color: #800000;
+  color: white;
+}
+footer {
+  background-color: #800000;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  font-size: 0.9rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+.text-center {
+  text-align: center;
+}
+#portofolio {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #1a1a1a; /* Lebih gelap */
+}
+#portofolio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.1; /* transparansi watermark */
+  filter: blur(0.5px); /* efek blur halus */
+  z-index: 0;
+}
+#portofolio::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.096); /* Sedikit lebih gelap */
+  z-index: 0;
+}
+#portofolio .container {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.portofolio-bg {
+  background: url("aset/fotopengacara.jpg") center center / contain no-repeat;
+  background-color: #42282863; /* fallback */
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.overlay-blur {
+  display: none; /* Hilangkan layer blur */
+}
+
+/* Header di halaman portofolio */
+header h1 {
+  font-size: 2.5rem;
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+/* Konten utama halaman portofolio */
+main {
+  background-color: #ffffff;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  line-height: 1.8;
+}
+
+/* Tombol kembali */
+nav a {
+  font-weight: bold;
+  color: #800000;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: #a52a2a;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  main {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+/* Footer konsisten */
+footer {
+  padding: 1em;
+  background-color: #800000;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Halaman Portofolio Background Fix (jika dibutuhkan) */
+body.portofolio-page {
+  background-color: #f2f2f2;
+}
+.btn-outline-dark {
+  border: 2px solid #212529;
+  color: #212529;
+  transition: all 0.3s ease;
+  padding: 0.5em 1.2em;
+  font-weight: 500;
+  border-radius: 0.3em;
+}
+.btn-outline-dark:hover {
+  background-color: #212529;
+  color: #fff;
+}
+@keyframes fadeInSpin {
+  0% {
+    opacity: 0;
+    transform: rotate(-20deg) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+.logo-navbar {
+  animation: fadeInSpin 1s ease-in-out;
+  transition: transform 0.3s ease;
+  height: 30px;
+  width: auto;
+}
+.logo-navbar:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* === Tambahan dari halaman tim === */
+
+.team-section {
+  padding: 60px 15px;
+  max-width: auto;
+  margin: auto;
+}
+.team-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+.member-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+.member-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 0;
+  background: #81747460;
+}
+.member-info {
+  padding: 20px;
+}
+.member-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.member-role {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* ...semua CSS sebelumnya tetap... */
+
+@media (max-width: 576px) {
+  #portofolio .card {
+    margin-bottom: 1rem;
+  }
+  .portofolio-bg {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  #portofolio::before,
+  #portofolio::after {
+    background-size: cover;
+    background-position: center;
+  }
+  .overlay-blur {
+    display: none;
+  }
+}
+
+/* Tambahan untuk memastikan teks terbaca */
+
+#portofolio .card-body {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* style accordion tim */
+
+.accordion-button i.bi {
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+  color: #0d6efd;
+}
+.accordion-item:nth-child(even) .accordion-button {
+  background-color: #f8f9fa;
+}
+.accordion-item:nth-child(odd) .accordion-button {
+  background-color: #e9ecef;
+}
+.accordion-body {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-img-top {
+  object-fit: cover;
+  height: 220px;
+}
+.card.h-100 {
+  min-height: 100%;
+}

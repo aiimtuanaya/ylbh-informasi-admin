@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Menambah Anggota</title>
+  <link rel="icon" href="aset/favicon.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .modal-backdrop.show {
+      background-color: #222 !important; /* abu-abu gelap */
+      opacity: 0.85 !important;          /* transparan */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+        <img src="aset/logoylbh.png" alt="Logo YLBH" class="me-2 logo-navbar" height="30" />
+        YLBH
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#profil">Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="tim.html">Tim Kami</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Layanan</a>
+            <ul class="dropdown-menu dropdown-menu-dark shadow">
+              <li><a class="dropdown-item" href="pidana.html">Hukum Pidana</a></li>
+              <li><a class="dropdown-item" href="perdata.html">Hukum Perdata</a></li>
+              <li><a class="dropdown-item" href="bisnis.html">Konsultasi Bisnis</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#portofolio">Portofolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#kontak">Hubungi Kami</a></li>
+          <li class="nav-item">
+            <button id="logout-btn" class="btn btn-outline-danger ms-1" type="button">
+              <i class="bi bi-box-arrow-right"></i> Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Modal Login Admin -->
+  <div class="modal fade" id="adminLoginModal" tabindex="-1" aria-labelledby="adminLoginModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="adminLoginModalLabel">Login Admin</h5>
+          <!-- Hapus tombol close di sini -->
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="admin-password" class="form-label">Password:</label>
+            <input type="password" id="admin-password" class="form-control" required>
+            <div id="login-error" class="text-danger d-none">Password salah!</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="login-btn">Masuk</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow mb-4">
+          <div class="card-header bg-primary text-white fw-bold">
+            Formulir Penambahan Anggota
+          </div>
+          <div class="card-body">
+            <form id="admin-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama Anggota:</label>
+                <input type="text" id="name" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="job" class="form-label">Jobdesk:</label>
+                <input type="text" id="job" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="desc" class="form-label">Deskripsi Jobdesk:</label>
+                <textarea id="desc" class="form-control" rows="2" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="photo" class="form-label">Foto Anggota:</label>
+                <input type="file" id="photo" class="form-control" accept="image/*" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Tambah Anggota</button>
+            </form>
+          </div>
+        </div>
+        <div class="card shadow">
+          <div class="card-header bg-secondary text-white fw-bold">
+            Daftar Anggota
+          </div>
+          <div class="card-body">
+            <ul id="members-list" class="list-group"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <div class="container">
+      <small>&copy; 2025 YLBH. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Validasi Login Admin dengan Modal Bootstrap
+    document.addEventListener("DOMContentLoaded", function() {
+      const loginModal = new bootstrap.Modal(document.getElementById('adminLoginModal'));
+      const loginBtn = document.getElementById('login-btn');
+      const passwordInput = document.getElementById('admin-password');
+      const errorDiv = document.getElementById('login-error');
+
+      function checkLogin() {
+        if (passwordInput.value === "admin123") {
+          loginModal.hide();
+          passwordInput.value = "";
+          errorDiv.classList.add("d-none");
+        } else {
+          errorDiv.classList.remove("d-none");
+          passwordInput.value = "";
+          passwordInput.focus();
+        }
+      }
+
+      loginModal.show();
+
+      loginBtn.onclick = checkLogin;
+      passwordInput.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") checkLogin();
+      });
+    });
+
+    // Menambahkan Anggota
+    document.getElementById("admin-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      let name = document.getElementById("name").value;
+      let job = document.getElementById("job").value;
+      let desc = document.getElementById("desc").value;
+      let photoInput = document.getElementById("photo");
+      let members = JSON.parse(localStorage.getItem("members") || "[]");
+
+      // Handle upload foto (base64)
+      if (photoInput.files && photoInput.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+          let photo = e.target.result;
+          members.push({ name: name, job: job, desc: desc, photo: photo });
+          localStorage.setItem("members", JSON.stringify(members));
+          alert("Anggota berhasil ditambahkan!");
+          displayMembers();
+          event.target.reset();
+        };
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+        members.push({ name: name, job: job, desc: desc, photo: "" });
+        localStorage.setItem("members", JSON.stringify(members));
+        alert("Anggota berhasil ditambahkan!");
+        displayMembers();
+        event.target.reset();
+      }
+    });
+
+    // Menampilkan Anggota
+    function displayMembers() {
+      let members = JSON.parse(localStorage.getItem("members") || "[]");
+      let membersList = document.getElementById("members-list");
+      membersList.innerHTML = '';
+      members.forEach((member, index) => {
+        let listItem = document.createElement("li");
+        listItem.className = "list-group-item d-flex justify-content-between align-items-center";
+        listItem.innerHTML = `
+          <span>
+            <strong>${member.name}</strong>: ${member.job}
+            <br>
+            <small>${member.desc || ""}</small>
+          </span>
+          ${member.photo ? `<img src="${member.photo}" alt="${member.name}" style="height:40px;width:40px;object-fit:cover;border-radius:50%;margin-left:10px;">` : ""}
+        `;
+        let btnGroup = document.createElement("div");
+        btnGroup.className = "btn-group btn-group-sm";
+        let editButton = document.createElement("button");
+        editButton.className = "btn btn-warning";
+        editButton.textContent = "Edit";
+        editButton.onclick = function() {
+          let newJob = prompt("Edit Jobdesk:", member.job);
+          let newDesc = prompt("Edit Deskripsi:", member.desc || "");
+          if (newJob !== null) member.job = newJob;
+          if (newDesc !== null) member.desc = newDesc;
+          localStorage.setItem("members", JSON.stringify(members));
+          displayMembers();
+        };
+        let deleteButton = document.createElement("button");
+        deleteButton.className = "btn btn-danger";
+        deleteButton.textContent = "Hapus";
+        deleteButton.onclick = function() {
+          members.splice(index, 1);
+          localStorage.setItem("members", JSON.stringify(members));
+          displayMembers();
+        };
+        btnGroup.appendChild(editButton);
+        btnGroup.appendChild(deleteButton);
+        listItem.appendChild(btnGroup);
+        membersList.appendChild(listItem);
+      });
+    }
+    displayMembers();
+
+    document.getElementById("logout-btn").onclick = function() {
+      window.location.href = "index.html";
+    };
+  </script>
+</body>
+</html>

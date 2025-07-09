@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<!-- Head section updated with Swiper CSS -->
+
+<head>
+  <link rel="icon" type="image/png" href="aset/favicon.png" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Beranda - YLBH</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    .swiper-pagination {
+      margin-top: 3rem;
+      transform: translateY(10px);
+    }
+
+    @media (min-width: 768px) {
+      .swiper-pagination {
+        margin-top: 4rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .swiper-pagination {
+        margin-top: 5rem;
+      }
+    }
+
+    .swiper.mySwiper {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body data-bs-offset="80" data-bs-spy="scroll" data-bs-target="#navbarMain" tabindex="0">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top" id="navbarMain">
+    <div class="container" style="max-width: 960px">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+        <img alt="Logo YLBH" class="me-2 logo-navbar" height="30" src="aset/logoylbh.png" width="30" />
+        YLBH
+      </a>
+      <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#profil">Profil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tim.html">Tim Kami</a>
+          </li>
+          <li class="nav-item dropdown me-2">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="layananDropdown"
+              role="button">Layanan</a>
+            <ul class="dropdown-menu dropdown-menu-dark shadow">
+              <li>
+                <a class="dropdown-item" href="pidana.html">Hukum Pidana</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="perdata.html">Hukum Perdata</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="bisnis.html">Konsultasi Bisnis</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portofolio">Portofolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#kontak">Hubungi Kami</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-warning ms-1 btn-sm" href="admin.html">
+              <i class="bi bi-person-lock"></i> Login Admin
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <!-- Header -->
+    <header class="text-center py-5">
+      <div class="container" style="max-width: 960px">
+        <h1 class="display-4 fw-bold">Solusi Hukum Profesional</h1>
+        <p class="lead">
+          Melayani dengan Integritas, Komitmen, dan Kompetensi
+        </p>
+      </div>
+    </header>
+    <!-- Profil -->
+    <section class="py-5 bg-light" id="profil">
+      <div class="container" style="max-width: 960px">
+        <h2 class="fw-bold text-center mb-4">Profil</h2>
+        <p class="text-center">
+          YLBH adalah lembaga bantuan hukum yang berdedikasi memberikan
+          layanan hukum kepada masyarakat umum dengan pendekatan profesional
+          dan etis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Updated Swiper slides section with unique IDs and new profiles -->
+    <div class="swiper mySwiper">
+      <h2 class="fw-bold text-center mb-4">Tim Kami</h2>
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="card h-100 text-center">
+            <img src="aset/rahmatsandi.jpg" class="card-img-top" alt="Adv. Rahmat Sandi" loading="lazy" />
+            <div class="card-body">
+              <h5 class="card-title">Adv. Rahmat Sandi Tatisina, S.H</h5>
+              <p class="card-text">
+                Koordinator YLBH BUN kantor Cabang Seram Bagian Barat.
+              </p>
+              <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
+                data-bs-target="#profilRahmat" aria-expanded="false" aria-controls="profilJohn">
+                Lihat Profil Lengkap
+              </button>
+              <div class="collapse mt-2" id="profilRahmat">
+                <p class="card-text">
+                  John telah menangani lebih dari 250 kasus pidana berat dan
+                  dikenal karena keahliannya dalam strategi litigasi tingkat
+                  tinggi. Ia juga aktif dalam seminar nasional sebagai
+                  pembicara di bidang hukum pidana.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="card h-100 text-center">
+            <img src="aset/raismahu.jpg" class="card-img-top" alt="Adv. Rais Mahu" loading="lazy" />
+            <div class="card-body">
+              <h5 class="card-title">Adv. Rais Mahu, SH</h5>
+              <p class="card-text">
+                Kemampuan menulis artikel ilmiah dalam berbagai jenis tema.
+              </p>
+              <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
+                data-bs-target="#profilMaria" aria-expanded="false" aria-controls="profilMaria">
+                Lihat Profil Lengkap
+              </button>
+              <div class="collapse mt-2" id="profilMaria">
+                <p class="card-text">
+                  di buktikan dengan juara 1 lomba penulisan esay tingkat
+                  Perguruan tinggi Provinsi Maluku tahun 2015. Memimpin media
+                  Seram Post media sebagai direktur utama tahun 2017, mengagas
+                  lahirnya LSM Independent Public Watch ( IPW) yang bergerak
+                  di isu-isu pelayanan publik tahun 2018 - sekarang sebagai
+                  ketua bidang advokasi dan kerja sama, 2024 di kukuhkan
+                  sebagai anggota Pemantau Pemilu oleh Konsolnas BAWASLU RI,
+                  di dalam Yayasan sebagai paralegal di Pengadilan Agama
+                  Masohi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="card h-100 text-center">
+            <img src="aset/alimin.jpg" class="card-img-top" alt="Adv. Alimin Maruapey" loading="lazy" />
+            <div class="card-body">
+              <h5 class="card-title">Adv. Alimin maruapey, SH</h5>
+              <p class="card-text">Bendahara umum YLBH.</p>
+              <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
+                data-bs-target="#profilRizal" aria-expanded="false" aria-controls="profilRizal">
+                Lihat Profil Lengkap
+              </button>
+              <div class="collapse mt-2" id="profilRizal">
+                <p class="card-text">
+                  Rizal mendampingi perusahaan dalam negosiasi kontrak, due
+                  diligence, dan proses merger-akuisisi. Ia memiliki jaringan
+                  luas di kalangan pebisnis dan regulator di tingkat nasional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="card h-100 text-center">
+            <img src="aset/fotopengacara.jpg" class="card-img-top" alt="Adv. Farah Utami" loading="lazy" />
+            <div class="card-body">
+              <h5 class="card-title">Adv. Farah Utami, SH., LLM</h5>
+              <p class="card-text">
+                Pakar hukum internasional dan HAM, aktif di forum PBB dan NGO
+                global.
+              </p>
+              <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
+                data-bs-target="#profilFarah" aria-expanded="false" aria-controls="profilFarah">
+                Lihat Profil Lengkap
+              </button>
+              <div class="collapse mt-2" id="profilFarah">
+                <p class="card-text">
+                  Farah dikenal karena keaktifannya membela korban pelanggaran
+                  HAM berat dan sebagai konsultan kebijakan HAM untuk lembaga
+                  internasional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <div class="card h-100 text-center">
+            <img src="aset/fotopengacara.jpg" class="card-img-top" alt="Adv. Budi Hartono" loading="lazy" />
+            <div class="card-body">
+              <h5 class="card-title">Adv. Budi Hartono, SH</h5>
+              <p class="card-text">
+                Spesialis hukum lingkungan dan tata ruang wilayah, menangani
+                kasus-kasus pertambangan dan agraria.
+              </p>
+              <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
+                data-bs-target="#profilBudi" aria-expanded="false" aria-controls="profilBudi">
+                Lihat Profil Lengkap
+              </button>
+              <div class="collapse mt-2" id="profilBudi">
+                <p class="card-text">
+                  Budi aktif membela masyarakat adat dan komunitas lokal dalam
+                  konflik lahan dan kebijakan zonasi lingkungan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="swiper-slide">
+          <div class="card h-100 text-center">
+            <img src="aset/fotopengacara.jpg" class="card-img-top" alt="Adv. Lestari Anindita" loading="lazy" />
+            <div class="card-body">
+              <h5 class="card-title">Adv. Lestari Anindita, SH., M.Kn</h5>
+              <p class="card-text">
+                Konsultan hukum pertanahan dan notaris, ahli dalam legalitas
+                properti dan dokumen resmi.
+              </p>
+              <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
+                data-bs-target="#profilLestari" aria-expanded="false" aria-controls="profilLestari">
+                Lihat Profil Lengkap
+              </button>
+              <div class="collapse mt-2" id="profilLestari">
+                <p class="card-text">
+                  Lestari banyak membantu developer dan pemilik usaha dalam
+                  proses perizinan, balik nama, dan legalitas aset.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS Initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        autoplay: {
+          delay: 5900,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 3,
+          },
+        },
+        on: {
+          slideChangeTransitionStart: function () {
+            document
+              .querySelectorAll(".collapse.show")
+              .forEach(function (el) {
+                new bootstrap.Collapse(el, { toggle: false }).hide();
+              });
+          },
+        },
+      });
+    </script>
+
+    <!-- Layanan -->
+    <section class="py-5 bg-light" id="layanan">
+      <div class="container" style="max-width: 960px">
+        <h2 class="text-center fw-bold mb-4">Layanan Kami</h2>
+        <div class="row g-4">
+          <!-- Pidana -->
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow">
+              <div class="card-body scroll-fade" data-aos="fade-up" id="pidana">
+                <h5 class="card-title">Hukum Pidana</h5>
+                <p class="card-text">
+                  Pendampingan dari penyidikan hingga kasasi dan PK.
+                </p>
+                <a class="btn btn-primary btn-sm btn-animated" href="pidana.html">Detail</a>
+              </div>
+            </div>
+          </div>
+          <!-- Perdata -->
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow">
+              <div class="card-body scroll-fade" data-aos="fade-up" data-aos-delay="100" id="perdata">
+                <h5 class="card-title">Hukum Perdata</h5>
+                <p class="card-text">
+                  Sengketa warisan, perceraian, kontrak dan lainnya.
+                </p>
+                <a class="btn btn-primary btn-sm btn-animated" href="perdata.html">Detail</a>
+              </div>
+            </div>
+          </div>
+          <!-- Bisnis -->
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow">
+              <div class="card-body scroll-fade" data-aos="fade-up" data-aos-delay="200" id="bisnis">
+                <h5 class="card-title">Konsultasi Bisnis</h5>
+                <p class="card-text">
+                  Kontrak, legalitas usaha, merger dan akuisisi.
+                </p>
+                <a class="btn btn-primary btn-sm btn-animated" href="bisnis.html">Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portofolio -->
+    <section class="py-5 position-relative text-white portofolio-bg" id="portofolio">
+      <div class="overlay-blur"></div>
+      <div class="container position-relative" style="max-width: 960px; z-index: 2">
+        <h2 class="fw-bold text-center mb-4">Portofolio</h2>
+        <p class="text-center scroll-fade mb-5">
+          Kami telah menangani ratusan kasus dengan berbagai latar belakang
+          hukum dan berhasil memberi hasil terbaik bagi klien.
+        </p>
+        <div class="carousel slide" data-bs-ride="carousel" id="carouselPortofolio">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row text-center">
+                <div class="col-md">
+                  <div class="card bg-dark bg-opacity-75 text-white h-100 shadow">
+                    <div class="card-body">
+                      <h5 class="card-title">Kasus Pidana Berat</h5>
+                      <p class="card-text">
+                        Pendampingan terdakwa kasus pembunuhan hingga putusan
+                        bebas.
+                      </p>
+                      <a href="pidana-berat.html" class="stretched-link text-white text-decoration-none">Kasus Pidana
+                        Berat</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="card bg-dark bg-opacity-75 text-white h-100 shadow">
+                    <div class="card-body">
+                      <h5 class="card-title">Sengketa Waris</h5>
+                      <p class="card-text">
+                        Penyelesaian damai dalam sengketa hak waris keluarga
+                        besar.
+                      </p>
+                      <a href="waris.html" class="stretched-link text-white text-decoration-none">Sengketa Waris</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="card bg-dark bg-opacity-75 text-white h-100 shadow">
+                    <div class="card-body">
+                      <h5 class="card-title">Perceraian Kompleks</h5>
+                      <p class="card-text">
+                        Penyelesaian perceraian multi-aset dengan hak asuh
+                        anak.
+                      </p>
+                      <a href="perceraian.html" class="stretched-link text-white text-decoration-none">Perceraian</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="card bg-dark bg-opacity-75 text-white h-100 shadow">
+                    <div class="card-body">
+                      <h5 class="card-title">Audit Legalitas Usaha</h5>
+                      <p class="card-text">
+                        Pendampingan audit hukum UMKM dalam ekspansi ke luar
+                        negeri.
+                      </p>
+                      <a href="legalitas-usaha.html" class="stretched-link text-white text-decoration-none">Legalitas
+                        Usaha</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="card bg-dark bg-opacity-75 text-white h-100 shadow">
+                    <div class="card-body">
+                      <h5 class="card-title">Investasi Startup</h5>
+                      <p class="card-text">
+                        Negosiasi kontrak dan pengamanan saham investor asing.
+                      </p>
+                      <a href="investasi-startup.html"
+                        class="stretched-link text-white text-decoration-none">Investasi</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Kontak -->
+    <section class="bg-light py-5" id="kontak">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-4">Alamat Kantor</h2>
+        <p>
+          Alamat kantor Gedung Pelni Lantai V, Jalan D.I Pandjaitan No.19.
+          Kelurahan Uritetu, Kota Ambon Provinsi Maluku.
+        </p>
+        <p>Email: lexpartners@example.com | Telepon: (0911) 123456</p>
+        <!-- Tombol WhatsApp -->
+        <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-3">
+          <a class="btn btn-success" href="https://wa.me/6281234567890" target="_blank">
+            <i class="bi bi-whatsapp me-2"></i>Hubungi via WhatsApp Umum
+          </a>
+          <!-- Tombol Konsultasi dengan Dropdown -->
+          <div class="btn-group">
+            <button aria-expanded="false" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+              type="button">
+              <i class="bi bi-whatsapp me-2"></i>Konsultasi dengan Pakar Hukum
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow">
+              <li>
+                <a class="dropdown-item"
+                  href="https://wa.me/6281111111111?text=Halo%2C%20saya%20butuh%20konsultasi%20hukum%20pidana"
+                  target="_blank">
+                  <i class="bi bi-shield-lock me-2"></i>Hukum Pidana
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  href="https://wa.me/6282222222222?text=Halo%2C%20saya%20butuh%20konsultasi%20hukum%20perdata"
+                  target="_blank">
+                  <i class="bi bi-file-earmark-text me-2"></i>Hukum Perdata
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  href="https://wa.me/6283333333333?text=Halo%2C%20saya%20ingin%20konsultasi%20bisnis" target="_blank">
+                  <i class="bi bi-briefcase me-2"></i>Konsultasi Bisnis
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Peta Lokasi -->
+        <div class="mt-5">
+          <h5 class="fw-semibold mb-3">Lokasi Kantor Kami</h5>
+          <div class="mx-auto shadow rounded overflow-hidden border border-2 border-dark"
+            style="max-width: 600px; height: 220px">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d248.84581445770522!2d128.18426398827626!3d-3.693091646582157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1748202159320!5m2!1sid!2sid"
+              width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-2"
+      style="max-width: 960px">
+      <!-- <img
+          src="aset/favicon.png"
+          alt="Logo YLBH"
+          height="10"
+          style="margin-left: 0.5rem" -->
+      <small>© 2025 YLBH. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <p style="text-align: center; font-style: italic; margin-top: 2em">
+    Situs informasi satu arah dari Yayasan Lembaga Bantuan Hukum (YLBH). Tidak
+    diperlukan login untuk mengakses informasi.
+  </p>
+  <script>
+    function renderDynamicMembers() {
+      const members = JSON.parse(localStorage.getItem("members") || "[]");
+      const swiperWrapper = document.querySelector('.swiper-wrapper');
+      if (!swiperWrapper) return;
+
+      // Hapus slide anggota dinamis sebelumnya (jika ada)
+      swiperWrapper.querySelectorAll('.dynamic-member-slide').forEach(e => e.remove());
+
+      members.forEach((member, idx) => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide dynamic-member-slide';
+        slide.innerHTML = `
+      <div class="card h-100 text-center">
+        <img src="${member.photo ? member.photo : 'aset/fotopengacara.jpg'}" class="card-img-top" alt="${member.name}" loading="lazy" style="object-fit:cover; height:220px;">
+        <div class="card-body">
+          <h5 class="card-title">${member.name}</h5>
+          <p class="card-text">${member.job}</p>
+          <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
+            data-bs-target="#profilDynamic${idx}" aria-expanded="false" aria-controls="profilDynamic${idx}">
+            Lihat Profil Lengkap
+          </button>
+          <div class="collapse mt-2" id="profilDynamic${idx}">
+            <p class="card-text">${member.desc ? member.desc : ''}</p>
+          </div>
+        </div>
+      </div>
+    `;
+        swiperWrapper.appendChild(slide);
+      });
+
+      // Update Swiper agar slide baru dikenali
+      if (window.swiper) {
+        window.swiper.update();
+      }
+    }
+
+    // Jalankan saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', renderDynamicMembers);
+  </script>
+</body>
+
+</html>
